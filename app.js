@@ -59,7 +59,7 @@ function setCurrentSize(newSize) {
 function draw() {
     const squares = document.querySelectorAll(".grid-square");
     for (let square of squares) {
-        square.addEventListener("mouseover", () => {
+        square.addEventListener("mousedown", () => {
             square.classList.add("colored-gray");
             square.removeAttribute("style");
         });
@@ -69,7 +69,7 @@ function draw() {
 function eraser() {
     const squares = document.querySelectorAll(".grid-square");
     for (let square of squares) {
-      square.addEventListener("mouseover", () => {
+      square.addEventListener("mousedown", () => {
         square.classList.remove("colored-gray");
         square.removeAttribute("style");
       });
@@ -87,7 +87,7 @@ function clear() {
 function color() {
     const squares = document.querySelectorAll(".grid-square");
     for (let square of squares) {
-        square.addEventListener("mouseover", () => {
+        square.addEventListener("mousedown", () => {
             let randomColor = Math.floor(Math.random() * 16777215).toString(16);
             square.style.cssText = "background-color: #" + randomColor;
         });
